@@ -16,7 +16,7 @@ from aiogram.types import (BotCommand, CallbackQuery, InlineKeyboardButton,
                            ReplyKeyboardMarkup)
 
 # ---- Sozlamalar (shu yerni o'zgartirasiz) ----
-ADMIN_USERNAME = "Muhammadullohxomidov77"
+ADMIN_USERNAME = "Muhammadulloh77"
 INSTAGRAM_URL = "https://www.instagram.com/ilmora.tech"
 SITE_URL = ""      # sayt Netlify'ga qo'yilgach havolani yozing, masalan "https://ilmora-tech.netlify.app"
 CHANNEL_URL = "https://t.me/ilmoratech"
