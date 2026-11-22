@@ -7,6 +7,7 @@ Ishga tushirish:
 import asyncio
 import logging
 import os
+import re
 
 from aiogram import Bot, Dispatcher, F
 from aiogram.filters import Command, CommandStart
@@ -229,7 +230,10 @@ async def fallback(message: Message) -> None:
 
 
 async def main() -> None:
-    token = os.getenv("BOT_TOKEN")
+    raw = os.getenv("BOT_TOKEN", "")
+    # Nusxalashda qo'shilib qolgan bo'sh joy yoki ortiqcha matnni tozalaymiz
+    found = re.search(r"\d{5,}:[A-Za-z0-9_-]{30,}", raw)
+    token = found.group(0) if found else raw.strip()
     if not token:
         raise SystemExit("BOT_TOKEN topilmadi. BotFather bergan tokenni BOT_TOKEN sifatida kiriting.")
     from aiogram.client.default import DefaultBotProperties
